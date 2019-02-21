@@ -1,0 +1,7 @@
+sudo fdisk -l
+sudo mlabel -i /dev/sdb1 -s ::"VIVEK-JYOTI"
+
+
+
+
+rsync -rvz /home/sriranga/Documents/node/vivek-jyoti/release-builds/final/* .

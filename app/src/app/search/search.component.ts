@@ -21,11 +21,6 @@ export interface Author {
   roman: string;
 }
 
-export interface Translator {
-  translator: string;
-  roman: string;
-}
-
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -37,7 +32,6 @@ export class SearchComponent implements OnInit {
   searchForm = new FormGroup({
     title: new FormControl(''),
     authornames: new FormControl(''),
-    translatornames: new FormControl(''),
     feature: new FormControl(''),
     series: new FormControl(''),
     fulltext: new FormControl(''),
@@ -49,10 +43,8 @@ export class SearchComponent implements OnInit {
   
   features: Array<any>;
   authors: Array<any>;
-  translators: Array<any>;
 
   filteredAuthorOptions: Observable<string[]>;
-  filteredTranslatorOptions: Observable<string[]>;
   
   constructor( private route: ActivatedRoute, private router: Router, private _dataService: DataService, private renderer: Renderer) { }
 
@@ -103,19 +95,6 @@ export class SearchComponent implements OnInit {
             map(value => value ? this._filterAuthor(value) : this.authors.slice())
           );
     });
-
-    this.route.paramMap
-      .switchMap((params: ParamMap) =>
-        this._dataService.getAllTranslators())
-      .subscribe(res => {
-        this.translators = res;
-
-
-        this.filteredTranslatorOptions = this.searchForm.get('translatornames').valueChanges
-          .pipe(
-            map(value => value ? this._filterTranslator(value) : this.translators.slice())
-          );
-    });
   }
 
   private _filterAuthor(value: string): Author[] {
@@ -123,13 +102,6 @@ export class SearchComponent implements OnInit {
     const filterValueAuthor = value.toLowerCase();
 
     return this.authors.filter(option => option.roman.toLowerCase().includes(filterValueAuthor) || option.author.toLowerCase().includes(filterValueAuthor));
-  }
-
-  private _filterTranslator(value: string): Translator[] {
-
-    const filterValueTranslator = value.toLowerCase();
-
-    return this.translators.filter(option => option.roman.toLowerCase().includes(filterValueTranslator) || option.translator.toLowerCase().includes(filterValueTranslator));
   }
 
   // displayAuthor(user?: Author): string | undefined {
@@ -172,14 +144,6 @@ export class SearchComponent implements OnInit {
         this.searchForm.get('authornames').setValue(authornames);
         setTimeout(() => this.renderer.selectRootElement('#authornames').focus(), 0);
 
-        break;
-
-      case 'translatornames' :
-        
-        var translatornames = this.searchForm.get('translatornames').value;
-        translatornames = translatornames ? translatornames + text : text;
-        this.searchForm.get('translatornames').setValue(translatornames);
-        setTimeout(() => this.renderer.selectRootElement('#translatornames').focus(), 0);
         break;
 
       case 'feature' :

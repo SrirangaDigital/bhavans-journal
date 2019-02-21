@@ -60,18 +60,6 @@ export class DataService {
 			.map(result => this.result = result.json());
 	}
 
-	getTranslatorsLetterWise(letter) {
-	
-		return this._http.get("http://127.0.0.1:3000/api/translators/" + letter)
-			.map(result => this.result = result.json());
-	}
-
-	getAllTranslators() {
-	
-		return this._http.get("http://127.0.0.1:3000/api/translators")
-			.map(result => this.result = result.json());
-	}
-
 	getFeaturesList() {
 	
 		return this._http.get("http://127.0.0.1:3000/api/distinct/feature")
@@ -87,12 +75,6 @@ export class DataService {
 	getYearsList() {
 	
 		return this._http.get("http://127.0.0.1:3000/api/distinct/year")
-			.map(result => this.result = result.json());
-	}
-
-	getCoversList() {
-	
-		return this._http.get("http://127.0.0.1:3000/api/covers")
 			.map(result => this.result = result.json());
 	}
 

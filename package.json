@@ -1,24 +1,24 @@
 {
-  "name": "vivek-jyoti",
+  "name": "bhavans-journal",
   "version": "1.0.0",
   "license": "MIT",
   "author": "Sriranga Digital Software Technologies Private Limited",
-  "description": "Digital archives of all issues of the Vivek Jyoti magazine from 1963 till 2018",
+  "description": "Digital archives of all issues of the Bhavans Journal magazine from 1954 till 2016",
   "scripts": {
     "electron": "electron app",
     "electron-build": "ng build --prod && electron .",
     "dist": "build --x64"
   },
   "build": {
-    "appId": "com.srirangadigital.vvj",
+    "appId": "com.srirangadigital.bvb",
     "asar": true,
     "directories": {
       "output": "release-builds"
     },
-    "copyright": "©2018 Ramakrishna Mission Vivekananda Ashrama, Raipur",
+    "copyright": "©2019 Bharatiya Vidya Bhavan",
     "linux": {
       "target": "AppImage",
-      "executableName": "vivek-jyoti-linux",
+      "executableName": "bhavans-journal-linux",
       "icon": "build/icon.png",
       "category": "Education"
     },
@@ -32,7 +32,7 @@
       "icon": "build/icon.icns"
     },
     "appImage": {
-      "artifactName": "Vivek Jyoti Archive - For Linux"
+      "artifactName": "Bhavans Journal Archive - For Linux"
     },
     "nsis": {
       "installerIcon": "build/icon.ico"

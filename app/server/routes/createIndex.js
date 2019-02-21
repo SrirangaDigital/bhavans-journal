@@ -20,7 +20,7 @@ router.get('/', function(req, res){
 	    this.saveDocument(false);
 	});
 
-	for(i=1;i<=56;i++) {
+	for(i=1;i<=63;i++) {
 
 		searchIndex.pipeline.remove(elasticlunr.stemmer);
 		searchIndex.pipeline.remove(elasticlunr.stopWordFilter);

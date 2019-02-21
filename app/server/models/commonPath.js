@@ -3,8 +3,8 @@ var fs = require('fs');
 
 var commonPath = '';
 
-var commomFolderName = 'vvjcommon';
-var discName = 'VIVEK-JYOTI';
+var commomFolderName = 'bvbcommon';
+var discName = 'BVB-JOURNAL';
 
 switch(os.platform()) {
 

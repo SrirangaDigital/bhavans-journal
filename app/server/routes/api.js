@@ -75,23 +75,6 @@ router.get('/parts', function(req, res){
 	});
 });
 
-router.get('/covers', function(req, res){
-
-	var query = {};
-
-	var projection = {}; projection['date'] = 1; projection['month'] = 1; projection['volume'] = 1; projection['part'] = 1; projection['year'] = 1; projection['_id'] = 0;
-	var sort = {}; sort['volume'] = 1; sort['part'] = 1;
-
-	Article.find(query, projection).sort(sort).exec(function(err, result){
-
-		if(err)			
-			console.log(err);
-		else 
-
-			return res.json(_und.uniq(result, 'date'));
-	});
-});
-
 router.get('/authors/:letter', function(req, res){
 
 	// Bring in AuthorIndex model
@@ -132,54 +115,6 @@ router.get('/authors', function(req, res){
 	sort['author'] = 1;
 
 	AuthorIndex.find(query).sort(sort).exec(function(err, result){
-
-		if(err)			
-			console.log(err);
-		else 
-			return res.json(result);
-	});
-});
-
-router.get('/translators/:letter', function(req, res){
-
-	// Bring in TranslatorIndex model
-	let TranslatorIndex = require('../models/translatorIndex');
-
-	var query = {};
-	var sort = {};
-
-	if(req.params.letter == 'Featured') {
-
-		query['count'] = {'$gt' : 50};
-		sort['count'] = -1;
-	}
-	else{
-
-		query['translator'] = new RegExp('^' + req.params.letter, 'i');
-		sort['translator'] = 1;
-	}
-
-
-	TranslatorIndex.find(query).sort(sort).exec(function(err, result){
-
-		if(err)			
-			console.log(err);
-		else 
-			return res.json(result);
-	});
-});
-
-router.get('/translators', function(req, res){
-
-	// Bring in TranslatorIndex model
-	let TranslatorIndex = require('../models/translatorIndex');
-
-	var query = {};
-	var sort = {};
-
-	sort['translator'] = 1;
-
-	TranslatorIndex.find(query).sort(sort).exec(function(err, result){
 
 		if(err)			
 			console.log(err);

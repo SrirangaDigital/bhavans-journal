@@ -22,7 +22,7 @@ function createWindow() {
         height: 162,
         frame: false,
         icon: __dirname + '/dist/assets/img/icon.png',
-        title: "Vivek Jyoti Archive"
+        title: "Bhavan's Journal Archive"
     });
     splashScreen.loadURL(`file://${__dirname}/dist/assets/html/splash.html`)
     splashScreen.show();
@@ -32,7 +32,7 @@ function createWindow() {
     
         show: false,
         icon: __dirname + '/dist/assets/img/icon.png',
-        title: "Vivek Jyoti Archive"
+        title: "Bhavan's Journal Archive"
     });
 
     win.loadURL(`file://${__dirname}/dist/index.html`)

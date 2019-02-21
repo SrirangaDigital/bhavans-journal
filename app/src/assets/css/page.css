@@ -1,25 +1,22 @@
 .mainpage{
   margin-top: 72px;
   margin-bottom: 100px;
-  font-family: 'Sanskrit2003', sans-serif;
-  font-size: 18px;
 }
 .mainpage h1{
   font-size: 24px;
-  color: #333;
-  border-bottom: 1px solid #1565C0;
-  padding-bottom: 12px;
-  margin-bottom: 8px;
-  font-weight: 300;
+  font-family: 'Lato', sans-serif;
+  color: #1565C0;
+  font-weight: 400;
   margin-bottom: 20px;
 }
 .mainpage h2{
   font-size: 18px;
+  font-family: 'Lato', sans-serif;
   color: #1565C0;
   font-weight: 400;
-  margin-top: 20px;
 }
 .mainpage .full-width-card{
+  font-family: 'Roboto', sans-serif;
   margin: 30px 0;
   padding: 20px;
   box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
@@ -79,7 +76,7 @@
 }
 .mainpage .full-width-card h3.author span:not(:first-of-type):last-of-type:before,
 .mainpage .full-width-card h3.translator span:not(:first-of-type):last-of-type:before{
- content: ' और ';
+ content: ' and ';
  color: #999;
  font-size: 16px;
 }
@@ -145,10 +142,11 @@
   margin-left: 0;
 }
 .mainpage .issueRow .issue{
-  font-size: 17px;
+  font-size: 14px;
+  font-weight: bold;
   padding: 10px 0 10px 0;
   text-align: center;
-  color: #555;
+  max-width: 78px;
 }
 .mainpage .issueRow .issue a{
   color: #3D3536;
@@ -161,11 +159,11 @@
 /*Search styles*/
 .mainpage .searchForm {
   margin-top: 64px;
-  font-family: 'Sanskrit2003', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 /*Angular styles for forms*/
 mat-form-field.mat-form-field{
-  font-family: 'Sanskrit2003' !important;
+  font-family: 'Roboto' !important;
   font-size: 18px !important;
   line-height: 24px !important;
   padding-left: 20px;
@@ -231,7 +229,7 @@ mat-label {
   height: 5px;
 }
 .mainpage p, .mainpage blockquote, .mainpage dl, .mainpage ul, .mainpage ol, .archiveIcon{
-  font-family: 'Sanskrit2003', sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin-bottom: 20px;
   font-weight: 300;
   color: #333;
@@ -323,44 +321,7 @@ mat-label {
 a.goBack{
   cursor: pointer;
   color: #1565C0 !important;
-  font-family: 'Sanskrit2003', sans-serif;
 }
-
-
-/*Soft Keyboard*/
-
-@media(max-width:768px) {
-  #kbd{
-    display: none;
-  }
-}
-#kbd{
-  width: 360px;
-  /*float: right;*/
-  margin-right: 0px;
-}
-.keys{
-  font-size: 20px;
-  width: 36px;
-  height: 36px;
-  float: left;
-  border-right: 1px solid #FF8A65;
-  border-bottom: 1px solid #FF8A65;
-  padding: 2px;
-  text-align: center;
-  cursor:pointer;
-  /*color: #AAA;*/
-}
-.keys:HOVER{
-  background-color: #FFF9C4;
-}
-.tline {
-  border-top: 1px solid #FF8A65;
-}
-.lline {
-  border-left: 1px solid #FF8A65;
-}
-
 /*cover page*/
 .cover{
   text-align: center;

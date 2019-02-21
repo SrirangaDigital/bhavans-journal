@@ -54,35 +54,22 @@ export class ArticlesComponent implements OnInit {
 
     if(this.articles.length == 0) return;
 
-    console.log(this.articles.length);
-
     switch (type) {
 
       case 'toc' :
-        // this.pageTitle = this.datePipe.transform(new Date(this.articles[0].date), 'd MMMM y') + ' (Volume ' + this.rlzeroPipe.transform(this.articles[0].volume) + ', Issue ' + this.rlzeroPipe.transform(this.articles[0].part) + ')';
-        this.pageTitle = this.monthToDevanagariPipe.transform(this.articles[0].date)
-          + ' '
-          + this.toDevanagariPipe.transform(this.articles[0].year)
-          + ' (वर्ष '
-          + this.toDevanagariPipe.transform(this.rlzeroPipe.transform(this.articles[0].volume))
-          + ', अंक '
-          + this.toDevanagariPipe.transform(this.rlzeroPipe.transform(this.articles[0].part))
-          + ')';
+        this.pageTitle = this.datePipe.transform(new Date(this.articles[0].date), 'd MMMM y') + ' (Volume ' + this.rlzeroPipe.transform(this.articles[0].volume) + ', Issue ' + this.rlzeroPipe.transform(this.articles[0].part) + ')';
         break;
       case 'author' :
-        this.pageTitle = 'लेखक : ' + this.urlParams.get('authornames');
-        break;
-      case 'translator' :
-        this.pageTitle = 'अनुवादक : ' + this.urlParams.get('translatornames');
+        this.pageTitle = 'Author > ' + this.urlParams.get('authornames');
         break;
       case 'feature' :
-        this.pageTitle = 'स्तम्भ : ' + this.urlParams.get('feature');
+        this.pageTitle = 'Feature > ' + this.urlParams.get('feature');
         break;
       case 'series' :
-        this.pageTitle = 'लेखमाला : ' + this.urlParams.get('series');
+        this.pageTitle = 'Series > ' + this.urlParams.get('series');
         break;
       case 'articlesLetterWise' :
-        this.pageTitle = 'लेख';
+        this.pageTitle = 'Titles';
         break;
     }
   }

@@ -14,14 +14,12 @@ import { AppRoutingModule } from './app-routing.module';
 // Components
 import { ArticlesComponent } from './articles/articles.component';
 import { AuthorsComponent } from './authors/authors.component';
-import { TranslatorsComponent } from './translators/translators.component';
 import { FeatureComponent } from './feature/feature.component';
 import { SeriesComponent } from './series/series.component';
 import { YearsComponent } from './years/years.component';
 import { SearchComponent } from './search/search.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { PageComponent } from './page/page.component';
-import { CoversComponent } from './covers/covers.component';
 
 // Custom Pipes
 import { RlzeroPipe } from './custom-pipes/rlzero.pipe';
@@ -40,7 +38,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppComponent,
     ArticlesComponent,
     AuthorsComponent,
-    TranslatorsComponent,
     FeatureComponent,
     SeriesComponent,
     YearsComponent,
@@ -49,8 +46,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PageComponent,
     RlzeroPipe,
     ToDevanagariPipe,
-    MonthToDevanagariPipe,
-    CoversComponent
+    MonthToDevanagariPipe
   ],
   imports: [
     BrowserModule,

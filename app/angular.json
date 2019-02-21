@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Vivek-Jyoti": {
+    "bhavans-journal": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -55,18 +55,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Vivek-Jyoti:build"
+            "browserTarget": "bhavans-journal:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Vivek-Jyoti:build:production"
+              "browserTarget": "bhavans-journal:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Vivek-Jyoti:build"
+            "browserTarget": "bhavans-journal:build"
           }
         },
         "test": {
@@ -106,7 +106,7 @@
         }
       }
     },
-    "Vivek-Jyoti-e2e": {
+    "bhavans-journal-e2e": {
       "root": "e2e",
       "sourceRoot": "e2e",
       "projectType": "application",
@@ -115,7 +115,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "Vivek-Jyoti:serve"
+            "devServerTarget": "bhavans-journal:serve"
           }
         },
         "lint": {
@@ -132,7 +132,7 @@
       }
     }
   },
-  "defaultProject": "Vivek-Jyoti",
+  "defaultProject": "bhavans-journal",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",

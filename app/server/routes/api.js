@@ -63,7 +63,7 @@ router.get('/parts', function(req, res){
 	if(_und.isEmpty(query)) return res.json([]);
 
 	var projection = {}; projection['date'] = 1; projection['month'] = 1; projection['volume'] = 1; projection['part'] = 1; projection['_id'] = 0;
-	var sort = {}; sort['month'] = 1;
+	var sort = {}; sort['date'] = 1;
 
 	Article.find(query, projection).sort(sort).exec(function(err, result){
 

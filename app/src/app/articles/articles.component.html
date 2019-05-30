@@ -16,7 +16,7 @@
           <span class="gray"><a routerLink="/articles/toc" [queryParams]="{volume: article.volume, part: article.part}">{{ article.date | date:'d MMMM y' }} (Volume {{ article.volume | rlzero }}, Issue {{ article.part | rlzero }})</a></span>
         </h4>
         <h2 class="title">
-          <p *ngIf="article.series" class="serial-no red"># {{ article.tnum | rlzero }}</p>
+          <p *ngIf="article.series && article.tnum != ''" class="serial-no red"># {{ article.tnum | rlzero }}</p>
           <a target="_blank" [href]="basePdfUrl + article.volume + '/' + article.part + '/index.pdf#page=' + article.page" class="pdf">{{ article.title }}</a>
         </h2>
         <h3 class="author by">

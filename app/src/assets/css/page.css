@@ -60,9 +60,11 @@
 }
 .mainpage .full-width-card h3.author,
 .mainpage .full-width-card h3.translator{
-  font-size: 18px;
+  font-size: 16px;
   color: #555;
   font-weight: 300;
+  margin-top: 5px;
+  margin-bottom: 5px;
   /*padding-top: 8px;*/
 }
 .mainpage .full-width-card h3.author.by:before,
@@ -104,8 +106,8 @@
   font-weight: 300;
 }
 .mainpage .alphabet .letter {
-  font-size: 18px;
-  margin-right: 10px;
+  font-size: 16px;
+  margin-right: 14px;
 }
 .mainpage .yearRow{
   margin: 30px 0 0 0;
@@ -115,7 +117,7 @@
   justify-content: space-around;
 }
 .mainpage .yearRow .year{
-  font-size: 20px;
+  font-size: 16px;
   padding: 10px;
   min-width: 80px;
   text-align: center;
@@ -170,7 +172,7 @@ mat-form-field.mat-form-field{
 }
 mat-label {
   color: #1565C0 !important;
-  font-size: 20px !important;
+  font-size: 18px !important;
 }
 .mainpage .searchForm .row{
   margin-bottom: 0px;
@@ -190,13 +192,14 @@ mat-label {
   border-radius: 0;
   outline: none;
   padding-top: 7px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 300;
   color: #555;
 }
 .mainpage .searchForm input.form-control[type="submit"], 
 .mainpage .searchForm input.form-control[type="reset"]{
-  border-radius: 0;
+  color: #777;
+  border-radius: 5;
   cursor: pointer;
 }
 .mainpage .searchForm input.form-control[type="submit"]:focus, 
@@ -206,6 +209,12 @@ mat-label {
 .mainpage .searchForm input.form-control[type="reset"]:focus, 
 .mainpage .searchForm input.form-control[type="reset"]:hover{
   border-color: #dc3545;
+}
+.mainpage .searchForm .mat-form-field-underline {
+  background-color: #DDD !important;
+}
+.mainpage .searchForm .mat-form-field-ripple {
+  background-color: #1565C0 !important;
 }
 
 .search-full-width {

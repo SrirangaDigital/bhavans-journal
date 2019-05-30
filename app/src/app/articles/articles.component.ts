@@ -60,13 +60,13 @@ export class ArticlesComponent implements OnInit {
         this.pageTitle = this.datePipe.transform(new Date(this.articles[0].date), 'd MMMM y') + ' (Volume ' + this.rlzeroPipe.transform(this.articles[0].volume) + ', Issue ' + this.rlzeroPipe.transform(this.articles[0].part) + ')';
         break;
       case 'author' :
-        this.pageTitle = 'Author > ' + this.urlParams.get('authornames');
+        this.pageTitle = 'Author : ' + this.urlParams.get('authornames');
         break;
       case 'feature' :
-        this.pageTitle = 'Feature > ' + this.urlParams.get('feature');
+        this.pageTitle = 'Feature : ' + this.urlParams.get('feature');
         break;
       case 'series' :
-        this.pageTitle = 'Series > ' + this.urlParams.get('series');
+        this.pageTitle = 'Series : ' + this.urlParams.get('series');
         break;
       case 'articlesLetterWise' :
         this.pageTitle = 'Titles';

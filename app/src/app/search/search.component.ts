@@ -13,9 +13,6 @@ import * as _underscore from 'underscore';
 import { DataService } from '../data.service';
 
 
- // Load the Google Transliterate API
-declare let google: any;
-
 export interface Author {
   author: string;
   roman: string;
@@ -38,9 +35,6 @@ export class SearchComponent implements OnInit {
     year: new FormControl('')
   });
 
-  elid:string;
-  googleLocal:any;
-  
   features: Array<any>;
   authors: Array<any>;
 
@@ -49,32 +43,6 @@ export class SearchComponent implements OnInit {
   constructor( private route: ActivatedRoute, private router: Router, private _dataService: DataService, private renderer: Renderer) { }
 
   ngOnInit() {
-    
-
-    if(!(typeof google === 'undefined')) {
-
-      google.load("elements", "1", {
-          packages: "transliteration",
-          callback: onLoad
-      });
-    }
-
-
-    function onLoad() {
-        var options = {
-            sourceLanguage: 'en', // or google.elements.transliteration.LanguageCode.ENGLISH,
-            destinationLanguage: ['hi'], // or [google.elements.transliteration.LanguageCode.HINDI],
-            shortcutKey: 'ctrl+g',
-            transliterationEnabled: true
-        };
-        // Create an instance on TransliterationControl with the required
-        // options.
-        var control = new google.elements.transliteration.TransliterationControl(options);
-
-        // Enable transliteration in the textfields with the given ids.
-        var ids = ["title", "feature", "series", "fulltext"];
-        control.makeTransliteratable(ids);
-    }
 
     this.route.paramMap
       .switchMap((params: ParamMap) =>
@@ -99,77 +67,20 @@ export class SearchComponent implements OnInit {
 
   private _filterAuthor(value: string): Author[] {
 
+    // console.log(value);
     const filterValueAuthor = value.toLowerCase();
 
-    return this.authors.filter(option => option.roman.toLowerCase().includes(filterValueAuthor) || option.author.toLowerCase().includes(filterValueAuthor));
+    return this.authors.filter(option => option.author.toLowerCase().includes(filterValueAuthor));
   }
 
-  // displayAuthor(user?: Author): string | undefined {
+  displayAuthor(user?: Author): string | undefined {
     
-  //   return user ? user.author : undefined;
-  // }
+    return user ? user.author : undefined;
+  }
 
   onSubmit() {
 
-    this.searchForm.get('title').setValue(this.renderer.selectRootElement('#title').value);
-    this.searchForm.get('series').setValue(this.renderer.selectRootElement('#series').value);
-    this.searchForm.get('fulltext').setValue(this.renderer.selectRootElement('#fulltext').value);
-    
     var form = _underscore.pick(this.searchForm.value, _underscore.identity);
 	  this.router.navigate(['/searchResults'], { queryParams:  form });
-  }
-
-  onFocus(field: string) {
-
-    this.elid = field;
-    console.log(this.elid);
-  }
-
-  insertText(text: string) {
-
-     switch (this.elid) {
-
-      case 'title' :
-        
-        var title = this.searchForm.get('title').value;
-        title = title ? title + text : text;
-        this.searchForm.get('title').setValue(title);
-        setTimeout(() => this.renderer.selectRootElement('#title').focus(), 0);
-        break;
-
-      case 'authornames' :
-        
-        var authornames = this.searchForm.get('authornames').value;
-        authornames = authornames ? authornames + text : text;
-        this.searchForm.get('authornames').setValue(authornames);
-        setTimeout(() => this.renderer.selectRootElement('#authornames').focus(), 0);
-
-        break;
-
-      case 'feature' :
-        
-        var feature = this.searchForm.get('feature').value;
-        feature = feature ? feature + text : text;
-        this.searchForm.get('feature').setValue(feature);
-        setTimeout(() => this.renderer.selectRootElement('#feature').focus(), 0);
-
-        break;
-
-      case 'series' :
-        
-        var series = this.searchForm.get('series').value;
-        series = series ? series + text : text;
-        this.searchForm.get('series').setValue(series);
-        setTimeout(() => this.renderer.selectRootElement('#series').focus(), 0);
-        break;
-
-      case 'fulltext' :
-        
-        var fulltext = this.searchForm.get('fulltext').value;
-        fulltext = fulltext ? fulltext + text : text;
-        this.searchForm.get('fulltext').setValue(fulltext);
-        setTimeout(() => this.renderer.selectRootElement('#fulltext').focus(), 0);
-        break;
-    }
   }
 }

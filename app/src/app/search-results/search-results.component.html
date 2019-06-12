@@ -9,7 +9,6 @@
       <h5 *ngIf="numresults == 0 && searchingComplete" class="no-results">No results!</h5>
       <div *ngFor="let article of articles">
         <div *ngIf="article?.length != 0" class="full-width-card blue-edge">
-          
           <h4 class="publication-details">
             <span *ngIf="article.feature" class="red"><a routerLink="/articles/feature" [queryParams]="{feature: article.feature}"><i class="fa fa-tags"></i> {{ article.feature }}</a></span>
             <span *ngIf="article.series" class="red"><a routerLink="/articles/series" [queryParams]="{series: article.series}"><i class="fa fa-link"></i> {{ article.series }}</a></span>
@@ -17,7 +16,7 @@
           </h4>
           <h2 class="title">
             <p *ngIf="article.series && article.tnum != ''" class="serial-no red"># {{ article.tnum | rlzero }}</p>
-            <a target="_blank" [href]="basePdfUrl + article.volume + '/' + article.part + '/index.pdf#page=' + article.page" class="pdf">{{ article.title }}</a>
+            <a target="_blank" [href]="basePdfUrl + article.volume + '/' + article.part + '/index.pdf#page=' + article.page + '&search=' + fullTextParam" class="pdf">{{ article.title }}</a>
           </h2>
           <h3 class="author by">
             <span *ngIf="article.authornames != ''">

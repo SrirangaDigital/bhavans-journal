@@ -10,13 +10,13 @@
             <div class="form-group row">
               <mat-form-field class="search-full-width">
                 <mat-label>Title</mat-label>
-                <input type="text" aria-label="Number" matInput formControlName="title" id="title" class="form-control" (focus)="onFocus('title')">
+                <input type="text" aria-label="Number" matInput formControlName="title" id="title" class="form-control">
               </mat-form-field>
             </div>
             <div class="form-group row">
               <mat-form-field class="search-full-width">
                 <mat-label>Author</mat-label>
-                <input type="text" aria-label="Author" matInput formControlName="authornames" [matAutocomplete]="autoAuthor" id="authornames" class="form-control" (focus)="onFocus('authornames')">
+                <input type="text" aria-label="Author" matInput formControlName="authornames" [matAutocomplete]="autoAuthor" id="authornames" class="form-control">
                 <mat-autocomplete #autoAuthor="matAutocomplete">
                   <mat-option *ngFor="let author of filteredAuthorOptions | async" [value]="author.author">
                     {{ author.author }}
@@ -27,7 +27,7 @@
             <div class="form-group row">
               <mat-form-field class="search-full-width">
                 <mat-label>Feature</mat-label>
-                <input type="text" aria-label="Number" list="features" matInput formControlName="feature" id="feature" class="form-control" (focus)="onFocus('feature')">
+                <input type="text" aria-label="Number" list="features" matInput formControlName="feature" id="feature" class="form-control">
                 <datalist id="features">
                   <option *ngFor="let feature of features" value="{{ feature }}"></option>
                 </datalist>
@@ -38,13 +38,13 @@
             <div class="form-group row">
               <mat-form-field class="search-full-width">
                 <mat-label>Series</mat-label>
-                <input type="text" aria-label="Number" matInput formControlName="series" id="series" class="form-control" (focus)="onFocus('series')">
+                <input type="text" aria-label="Number" matInput formControlName="series" id="series" class="form-control">
               </mat-form-field>
             </div>
             <div class="form-group row">
               <mat-form-field class="search-full-width">
                 <mat-label>Word</mat-label>
-                <input type="text" aria-label="Number" matInput formControlName="fulltext" id="fulltext" class="form-control" (focus)="onFocus('fulltext')">
+                <input type="text" aria-label="Number" matInput formControlName="fulltext" id="fulltext" class="form-control">
               </mat-form-field>
             </div>
             <div class="form-group row">

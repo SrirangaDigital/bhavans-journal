@@ -358,3 +358,10 @@ a.goBack{
   display: none;
 }
 
+.mainpage.editors .people p{
+  text-align: center;
+  line-height: 24px;
+}
+.mainpage.editors .people img{
+  margin-bottom: 8px;
+}

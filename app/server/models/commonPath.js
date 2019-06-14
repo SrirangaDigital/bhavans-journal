@@ -10,6 +10,10 @@ switch(os.platform()) {
 
     case "win32":
 
+        if(fs.existsSync("N:\\" + commomFolderName)) commonPath = "N:\\" + commomFolderName;
+        if(fs.existsSync("M:\\" + commomFolderName)) commonPath = "M:\\" + commomFolderName;
+        if(fs.existsSync("L:\\" + commomFolderName)) commonPath = "L:\\" + commomFolderName;
+        if(fs.existsSync("K:\\" + commomFolderName)) commonPath = "K:\\" + commomFolderName;
     	if(fs.existsSync("J:\\" + commomFolderName)) commonPath = "J:\\" + commomFolderName;
     	if(fs.existsSync("I:\\" + commomFolderName)) commonPath = "I:\\" + commomFolderName;
     	if(fs.existsSync("H:\\" + commomFolderName)) commonPath = "H:\\" + commomFolderName;
